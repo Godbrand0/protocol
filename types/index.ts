@@ -34,6 +34,32 @@ export interface Provider {
   is_featured: boolean;
 }
 
+export type DocumentType = "cac" | "red_card" | "id" | "association" | "insurance";
+export type DocumentStatus = "pending" | "approved" | "rejected";
+
+export interface ProviderDocument {
+  id: string;
+  provider_id: string;
+  document_type: DocumentType;
+  file_path: string;
+  status: DocumentStatus;
+  reviewed_at: string | null;
+  reviewer_notes: string | null;
+  created_at: string;
+}
+
+export interface TeamMember {
+  id: string;
+  provider_id: string;
+  full_name: string;
+  role_title: string | null;
+  phone: string | null;
+  email: string | null;
+  bio: string | null;
+  headshot_path: string | null;
+  created_at: string;
+}
+
 export interface Service {
   id: string;
   provider_id: string;
